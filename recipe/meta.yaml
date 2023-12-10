@@ -1,5 +1,5 @@
 {% set name = "ceffyl" %}
-{% set version = "1.26" %}
+{% set version = "1.30" %}
 
 package:
   name: {{ name|lower }}
@@ -47,11 +47,11 @@ test:
 about:
   home: https://github.com/astrolamb/ceffyl/
   dev_url: https://github.com/astrolamb/ceffyl/
-  summary: Software to rapidly and flexibly analyse Pulsar Timing Array data via the Generalised Factorised Likelihood (GFL)method
+  summary: A software package to rapidly and flexibly analyse pulsar timing array (PTA) data via refiting to pulsar timing free spectra.\nThis can be done by fitting to a free spectrum of the entire PTA or to individual pulsars!
   license: MIT
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
-    - davecwright3
     - astrolamb
+    - davecwright3
