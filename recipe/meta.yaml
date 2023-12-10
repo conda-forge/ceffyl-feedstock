@@ -1,5 +1,5 @@
 {% set name = "ceffyl" %}
-{% set version = "1.26" %}
+{% set version = "1.30" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ceffyl-{{ version }}.tar.gz
-  sha256: 305c7dd875af4448b861cc3055de6fab4603070d291412b93540a9103e1628d5
+  sha256: 4a474173d791fdef548412775e8526e6d955b4d225217dc52c2478fd3f2dadd6
 
 build:
   skip: true  # [win]
