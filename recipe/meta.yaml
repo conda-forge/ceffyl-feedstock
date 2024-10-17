@@ -16,6 +16,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools
@@ -46,6 +47,9 @@ test:
     - pip
 
 about:
+  home: https://github.com/astrolamb/ceffyl/
+  dev_url: https://github.com/astrolamb/ceffyl/
+  summary: A software package to rapidly and flexibly analyse pulsar timing array data
   license: MIT
   license_file: LICENSE
 
