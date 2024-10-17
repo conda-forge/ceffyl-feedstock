@@ -7,7 +7,7 @@ Home: https://github.com/astrolamb/ceffyl/
 
 Package license: MIT
 
-Summary: Software to rapidly and flexibly analyse Pulsar Timing Array data via the Generalised Factorised Likelihood (GFL)method
+Summary: A software package to rapidly and flexibly analyse Pulsar Timing Array data
 
 Development: https://github.com/astrolamb/ceffyl/
 
