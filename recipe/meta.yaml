@@ -6,13 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ceffyl-{{ version }}.tar.gz
-  url: https://github.com/astrolamb/ceffyl/archive/v1.40.tar.gz
-  sha256: 305c7dd875af4448b861cc3055de6fab4603070d291412b93540a9103e1628d5
+  url: https://github.com/astrolamb/ceffyl/archive/v{{ version }}.tar.gz
+  sha256: 5dc4d555bb214c47a877073ac123a63ad3292beea58435d7bc0d2f7e28972bed
 
 build:
-  skip: true  # [win]
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -23,36 +21,35 @@ requirements:
     - setuptools
     - wheel
     - numpy >=1.23.5,<2.0.0
-    - cython >=0.29.37,<1.0.0
+    - cython >=0.29.33,<1.0.0
     - pip
   run:
     - python
+    - cython >=0.29.37,<1.0.0
     - encor >=1.1.2
-    - enterprise_extensions >=2.4.2,<3.0.0
     - enterprise-pulsar >=3.4.1,<4.0.0
+    - enterprise_extensions >=2.4.2,<3.0.0
     - h5py >=3.11.0,<4.0.0
-    - kdepy >=1.1.9,<2.0.0
+    - kalepy >=1.4,<2.0.0
+    - kdepy >=1.1.0,<2.0.0
     - la_forge >=1.1.0,<2.0.0
     - natsort >=8.4.0,<9.0.0
     - ptmcmcsampler >=2.1.2,<3.0.0
-    - scipy >=1.10.0,<2.0.0
     - {{ pin_compatible('numpy') }}
-  run_constrained:
-    - holodeck-gw 1.*
-    - kalepy 1.*
 
 test:
   imports:
     - ceffyl
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/astrolamb/ceffyl/
-  dev_url: https://github.com/astrolamb/ceffyl/
-  summary: A software package to rapidly and flexibly analyse Pulsar Timing Array data 
   license: MIT
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
-    - davecwright3
     - astrolamb
+    - davecwright3
