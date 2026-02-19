@@ -10,9 +10,9 @@ source:
   sha256: c9c22162d6dc9b8653727ff4dcf9b6ceedc389e870538129dd853b05c2e12151
 
 build:
-  skip: true  # [win]
+  skip: true  # [win or py>=313]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
